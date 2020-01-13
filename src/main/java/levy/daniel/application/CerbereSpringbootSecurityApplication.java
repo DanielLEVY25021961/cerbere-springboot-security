@@ -1,7 +1,5 @@
 package levy.daniel.application;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -9,7 +7,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import levy.daniel.application.model.persistence.metier.utilisateur.dao.jpaspring.impl.MonProfilDAOJPASpring;
-import levy.daniel.application.model.persistence.metier.utilisateur.entities.jpa.MonCerbereEntityJPA;
 
 /**
  * CLASSE CerbereSpringbootSecurityApplication :<br/>
@@ -51,7 +48,7 @@ public class CerbereSpringbootSecurityApplication implements CommandLineRunner {
 	
 
 	/**
-	 * .<br/>
+	 * Point d'entrée de l'application.<br/>
 	 * <br/>
 	 *
 	 * @param pArgs : String[]
@@ -69,28 +66,28 @@ public class CerbereSpringbootSecurityApplication implements CommandLineRunner {
 	*/
 	@Override
 	public void run(final String... pArgs) throws Exception {
-
-		final String role = "ROLE_ADMINISTRATEUR - TOUT";
-		
-		final List<MonCerbereEntityJPA> users 
-			= this.monProfilDAOJPASpring.findUsersByRole(role);
-		
-		if (users != null) {
-			
-			for (final MonCerbereEntityJPA user : users) {
-				System.out.println(user.toString());
-			}
-			
-		} else {
-			
-			System.out.println();
-			System.out.println("=============================================================");
-			System.out.println("CLASSE CerbereSpringbootSecurityApplication RUN - users NULL");
-			System.out.println("=============================================================");
-			System.out.println();
-			
-		}
-		
+//
+//		final String role = "ROLE_ADMINISTRATEUR - TOUT";
+//		
+//		final List<MonCerbereEntityJPA> users 
+//			= this.monProfilDAOJPASpring.findUsersByRole(role);
+//		
+//		if (users != null) {
+//			
+//			for (final MonCerbereEntityJPA user : users) {
+//				System.out.println(user.toString());
+//			}
+//			
+//		} else {
+//			
+//			System.out.println();
+//			System.out.println("=============================================================");
+//			System.out.println("CLASSE CerbereSpringbootSecurityApplication RUN - users NULL");
+//			System.out.println("=============================================================");
+//			System.out.println();
+//			
+//		}
+//		
 	} // Fin de run(...).__________________________________________________
 	
 	
