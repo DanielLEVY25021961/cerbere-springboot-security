@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr" 
+	xmlns:th="http://www.thymeleaf.org" 
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+			xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5" 
+			layout:decorate="~{layouts/layout_classique}">
+
+	<head>
+	
+	    <!-- fichier HTML encodé en UTF-8 -->
+	    <meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	
+	    <!-- compatibilité avec les anciennes versions d'Internet Explorer -->
+	    <!--[if IE]>
+	        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	    <![endif]-->
+
+        <!--Description du contenu de la page-->
+        <meta name="description" content="accueil, ..." />
+
+        <!--Mots clé-->
+        <meta name="keywords" content="accueil, page accueil, ..." />
+
+        <!-- pour site responsive -->	        	
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- ==================== -->
+        <!--           CSS        -->
+        <!-- ==================== -->
+         <!-- BOOTSTRAP -->
+         <!-- lien vers CSS BOOTSTRAP AVEC WEBJARS-->
+         <!-- <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" 
+         	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" /> -->
+        
+        <!-- LIEN vers CSS BOOTSTRAP DANS RESSOURCES -->
+        <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css"
+            th:href="@{/css/bootstrap.min.css}" />
+            
+        <!-- lien vers CSS PERSONNELLE -->
+		<link rel="stylesheet" type="text/css" href="../../../static/css/application.css" 
+				th:href="@{/css/application.css}" />
+                     
+         <!-- lien vers CSS FONT-AWESOME AVEC WEBJARS-->
+          <!-- <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/css/fontawesome.min.css"
+         	th:href="@{/webjars/font-awesome/css/fontawesome.min.css}" /> -->
+        
+        <!-- ==================== -->
+        <!--      JAVASCRIPT      -->
+        <!-- ==================== -->
+		<!-- ATTENTION : TOUJOURS METTRE JQUERY AVANT TOUT SCRIPT --> 
+		<!-- ***************************************************** -->
+		<!-- jQUERY AVEC WEBJARS -->
+		<!-- <script type="text/javascript" src="/webjars/jquery/jquery.min.js" 
+				th:src="@{/webjars/jquery/jquery.min.js}"></script> -->
+
+		<!-- jQUERY DANS RESSOURCES -->
+		<script type="text/javascript" src="../../../static/js/jquery.min.js" 
+				th:src="@{/js/jquery.min.js}"></script>
+		<!-- ***************************************************** -->
+
+		<!-- ***************************************************** -->
+        <!-- POPPER.js AVEC WEBJARS -->
+        <!-- <script type="text/javascript" src="/webjars/popper.js/popper.min.js" 
+     			th:src="@{/webjars/popper.js/popper.min.js}" ></script>  -->
+
+        <!-- POPPER.js DANS RESSOURCES -->
+        <script type="text/javascript" src="../../../static/js/popper.min.js" 
+     			th:src="@{/js/popper.min.js}" ></script> 
+		<!-- ***************************************************** -->
+
+		<!-- ***************************************************** -->
+		<!-- BOOTSTRAP.js AVEC WEBJARS -->
+        <!-- <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js" 
+				th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>  -->
+
+		<!-- BOOTSTRAP.js DANS RESSOURCES -->
+		<script type="text/javascript" src="../../../static/js/bootstrap.min.js" 
+				th:src="@{/js/bootstrap.min.js}"></script> 
+		<!-- ***************************************************** -->
+
+		<!-- MAIN.js (script perso) -->
+		<script type="text/javascript" src="../../../static/js/main.js" 
+				th:src="@{/js/main.js}"></script>
+                               
+        <!-- titre de l'onglet -->	    
+		<title>index.html</title>
+
+	</head>
+	
+	<body>
+
+		<div class="container">
+	
+			<!-- CONTENU DECORANT LE LAYOUT DANS CETTE SECTION -->
+			<div layout:fragment="content">
+		
+				<section class="container-fluid main">
+				
+					<div class= "container">
+					
+						<h1>PAGE D'ACCUEIL /INDEX.html</h1>
+						
+						<div>
+							
+							<!-- DEBUT DIV CARD CERBERE-->
+                        	<div class="card m-3" id="CerbereCard">
+                        		
+                        		<div class="card-header text-white bg-primary" id="CerbereCardHeader">
+                        			Objet Cerbere en SESSION
+                        		</div>                        		
+
+	                        	<!-- DEBUT DIV CARD CERBERE-BODY 1 -->
+	                        	<div class="card-body" id="CerbereCardBody1">
+
+									<!-- DEBUT DIV IDENTIFIANT CERBERE INTERNE -->
+									<div>
+	
+										<label for="labelIdentifiantCerbere">
+											Identifiant Cerbere interne (cerbere.getUtilisateur().getIdentifiant()) : 
+										</label>
+	
+										<span th:if="${cerbere}">
+											<label th:text="${cerbere.getUtilisateur().getIdentifiant()}" class="font-weight-bold" id="labelIdentifiantCerbere">
+												valeur Identifiant Cerbere interne
+											</label>
+										</span>
+	
+									<!-- FIN DIV IDENTIFIANT CERBERE INTERNE -->	
+									</div>
+	
+									<!-- DEBUT DIV MEL CERBERE -->
+									<div>
+	
+										<label for="labelMelCerbere">
+											Mel de l'objet Cerbere (cerbere.getUtilisateur().getMel()) : 
+										</label>
+	
+										<span th:if="${cerbere}">
+											<label th:text="${cerbere.getUtilisateur().getMel()}" class="font-weight-bold" id="labelMelCerbere">
+												Mel de l'objet Cerbere
+											</label>
+										</span>
+		
+									<!-- FIN DIV MEL CERBERE -->
+									</div>
+	
+									<!-- DEBUT DIV LOGIN CERBERE -->
+									<div>
+	
+										<label for="labelLoginCerbere">
+											Login de l'objet Cerbere (cerbere.getUtilisateur().getLogin()) : 
+										</label>
+	
+										<span th:if="${cerbere}">
+											<label th:text="${cerbere.getUtilisateur().getLogin()}" class="font-weight-bold" id="labelLoginCerbere">
+												Login de l'objet Cerbere
+											</label>
+										</span>
+		
+									<!-- FIN DIV LOGIN CERBERE -->
+									</div>
+									
+									<!-- DEBUT DIV CIVILITE CERBERE -->
+									<div>
+	
+										<label for="labelCiviliteCerbere">
+											Civilité de l'objet Cerbere (cerbere.getUtilisateur().getCivilite()) : 
+										</label>
+	
+										<span th:if="${cerbere}">
+											<label th:text="${cerbere.getUtilisateur().getCivilite()}" class="font-weight-bold" id="labelCiviliteCerbere">
+												Civilité de l'objet Cerbere
+											</label>
+										</span>
+		
+									<!-- FIN DIV CIVILITE CERBERE -->
+									</div>
+									
+									<!-- DEBUT DIV PRENOM CERBERE -->
+									<div>
+	
+										<label for="labelPrenomCerbere">
+											Prénom de l'objet Cerbere (cerbere.getUtilisateur().getPrenom()) : 
+										</label>
+	
+										<span th:if="${cerbere}">
+											<label th:text="${cerbere.getUtilisateur().getPrenom()}" class="font-weight-bold" id="labelPrenomCerbere">
+												Prénom de l'objet Cerbere
+											</label>
+										</span>
+		
+									<!-- FIN DIV PRENOM CERBERE -->
+									</div>
+
+									<!-- DEBUT DIV NOM CERBERE -->
+									<div>
+	
+										<label for="labelNomCerbere">
+											Nom de l'objet Cerbere (cerbere.getUtilisateur().getNom()) : 
+										</label>
+	
+										<span th:if="${cerbere}">
+											<label th:text="${cerbere.getUtilisateur().getNom()}" class="font-weight-bold" id="labelNomCerbere">
+												Nom de l'objet Cerbere
+											</label>
+										</span>
+		
+									<!-- FIN DIV NOM CERBERE -->
+									</div>
+
+									<!-- DEBUT DIV TELEPHONEFIXE CERBERE -->
+									<div>
+	
+										<label for="labelTelephoneFixeCerbere">
+											Téléphone fixe de l'objet Cerbere (cerbere.getUtilisateur().getNumTelFixe()) : 
+										</label>
+	
+										<span th:if="${cerbere}">
+											<label th:text="${cerbere.getUtilisateur().getNumTelFixe()}" class="font-weight-bold" id="labelTelephoneFixeCerbere">
+												Téléphone fixe de l'objet Cerbere
+											</label>
+										</span>
+		
+									<!-- FIN DIV TELEPHONEFIXE CERBERE -->
+									</div>
+
+
+									<!-- DEBUT DIV UNITE CERBERE -->
+									<div>
+	
+										<label for="labelUniteCerbere">
+											Unité de l'objet Cerbere (cerbere.getUtilisateur().getUnite()) : 
+										</label>
+	
+										<span th:if="${cerbere}">
+											<label th:text="${cerbere.getUtilisateur().getUnite()}" class="font-weight-bold" id="labelUniteCerbere">
+												Unité de l'objet Cerbere
+											</label>
+										</span>
+		
+									<!-- FIN DIV UNITE CERBERE -->
+									</div>
+
+									<!-- DEBUT DIV BUREAU CERBERE -->
+									<div>
+	
+										<label for="labelBureauCerbere">
+											Bureau de l'objet Cerbere (cerbere.getUtilisateur().getBureau()) : 
+										</label>
+	
+										<span th:if="${cerbere}">
+											<label th:text="${cerbere.getUtilisateur().getBureau()}" class="font-weight-bold" id="labelBureauCerbere">
+												Bureau de l'objet Cerbere
+											</label>
+										</span>
+		
+									<!-- FIN DIV BUREAU CERBERE -->
+									</div>
+	                        	
+	                        	<!-- FIN DIV CARD CERBERE-BODY 1 -->	
+	                        	</div>
+	                        	
+	                        	<!-- DEBUT DIV CARD CERBERE-BODY 2 -->
+	                        	<div class="card-body" id="CerbereCardBody2">
+	                        	
+	                        		<h2>Rôles du CERBERE : </h2>
+	                        		
+									<!-- DEBUT DIV ROLE CERBERE -->
+									<div th:if="${cerbere.getHabilitation()}">
+	
+										<table class="table table-striped table-bordered">
+											
+											<thead class="thead-light bg-info">
+												
+												<tr>
+													<td>ROLE</td><td>PORTEE</td><td>RESTRICTION</td>
+												</tr>
+												
+											</thead>
+											
+											<tbody>
+												
+												<tr th:each="profil : ${cerbere.getHabilitation().getTousProfils()}">
+													<td th:text="${profil.getNom()}">ROLE</td>
+													<td th:text="${profil.getPortee()}">PORTEE</td>
+													<td th:text="${profil.getRestriction()}">RESTRICTION</td>
+												</tr>
+												
+											</tbody>
+											
+										</table>
+	
+									<!-- FIN DIV ROLE CERBERE -->
+									</div>
+	                        	
+	                        	<!-- FIN DIV CARD CERBERE-BODY 2 -->	
+	                        	</div>
+	                        	                        		
+                        	<!-- FIN DIV CARD CERBERE-->	
+                        	</div>
+                        
+						</div>
+						
+						<ul>
+							<li class="nav-item active">
+								<a class="nav-link" th:href="@{/UtilisateurCerbereControllerSpringWeb/versCreerUtilisateur}">
+										Créer un utilisateur<span class="sr-only">(current)</span>
+								</a>
+							</li>
+							<li>
+								<a class="nav-link" th:href="@{/AccueilController/logout}">
+									Se deconnecter<span class="sr-only">(current)</span>
+								</a>
+							</li>
+						</ul>
+		
+					</div>
+						
+				</section>
+	
+			</div>
+	
+		</div>
+
+	</body>
+
+</html>
