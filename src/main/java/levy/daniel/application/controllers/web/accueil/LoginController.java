@@ -94,7 +94,7 @@ public class LoginController {
 	 * <li>retourne la page "/accueil/login.html".</li>
 	 * </ul>
 	 * 
-	 * @param pError: String : 
+	 * @param pError : String : 
 	 * paramètre 'error' passé dans la requête en cas de
 	 * défaut d'authentification.
 	 * @param pLogout : String : 

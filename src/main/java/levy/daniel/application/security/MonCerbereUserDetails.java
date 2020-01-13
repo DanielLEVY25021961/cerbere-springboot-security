@@ -56,7 +56,7 @@ public class MonCerbereUserDetails implements UserDetails {
 	/**
 	 * rôles du User en session.
 	 */
-	private Collection<IMonProfil> roles;
+	private transient Collection<IMonProfil> roles;
 	
 
 	/**

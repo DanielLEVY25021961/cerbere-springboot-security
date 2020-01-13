@@ -48,7 +48,7 @@ public class UtilisateurCerbereSpringDataService {
 	 * DAO pour les UtilisateurCerbere.
 	 */
 	@Autowired
-	private IUtilisateurCerbereDAOJPASpringRepository utilisateurCerbereDAO;
+	private transient IUtilisateurCerbereDAOJPASpringRepository utilisateurCerbereDAO;
 	
 	/**
 	 * LOG : Log : 

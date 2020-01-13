@@ -539,8 +539,6 @@ public interface IMonCerbere extends
 	 * récupéré en session en retour du filtre Cerbere
 	 * modélisant la présente <strong>application</strong>.<br/>
 	 *
-	 * @return <code>this.application</code> : Application
-	 *
 	 * @param pApplication : Application :
 	 * valeur à passer à <code>this.application</code>.
 	 */

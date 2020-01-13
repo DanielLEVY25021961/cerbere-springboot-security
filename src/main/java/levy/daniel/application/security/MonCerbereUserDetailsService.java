@@ -43,7 +43,7 @@ public class MonCerbereUserDetailsService implements UserDetailsService {
 	 */
 	@Autowired
 	@Qualifier("MonCerbereDAOJPASpring")
-	private MonCerbereDAOJPASpring userSpringDao;
+	private transient MonCerbereDAOJPASpring userSpringDao;
 
 	/**
 	 * LOG : Log : 

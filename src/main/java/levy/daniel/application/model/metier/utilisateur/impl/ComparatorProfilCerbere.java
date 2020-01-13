@@ -97,13 +97,11 @@ public class ComparatorProfilCerbere implements Comparator<Profil> {
 					return pO1.getPortee()
 							.compareToIgnoreCase(pO2.getPortee());
 					
-				} else {
+				} 
 					
-					return pO1.getPortee()
-							.compareToIgnoreCase(pO2.getPortee());
-					
-				}
-				
+				return pO1.getPortee()
+						.compareToIgnoreCase(pO2.getPortee());
+									
 			}
 			
 			return 0;

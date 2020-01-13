@@ -234,7 +234,6 @@ public class MonCerbere implements IMonCerbere {
 	 * @param pNom : String : nom
 	 * @param pTelephoneFixe : String : numéro de téléphone fixe.
 	 * @param pMel : String : e-mail. 
-	 * @param pService : String : Service de l'utilisateur.
 	 * @param pUnite : String : Unité de l'utilisateur.
 	 * @param pProfils : Collection&lt;IMonProfil&gt; : 
 	 * Collection des profils de l'utilisateur.
@@ -281,7 +280,6 @@ public class MonCerbere implements IMonCerbere {
 	 * @param pNom : String : nom
 	 * @param pTelephoneFixe : String : numéro de téléphone fixe.
 	 * @param pMel : String : e-mail. 
-	 * @param pService : String : Service de l'utilisateur.
 	 * @param pUnite : String : Unité de l'utilisateur.
 	 * @param pProfils : Collection&lt;IMonProfil&gt; : 
 	 * Collection des profils de l'utilisateur.

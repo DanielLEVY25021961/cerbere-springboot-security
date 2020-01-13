@@ -1,7 +1,6 @@
 package levy.daniel.application.model.services.metier.utilisateurs;
 
 import i2.application.cerbere.commun.Cerbere;
-import levy.daniel.application.apptechnic.exceptions.technical.impl.MauvaisParametreRunTimeException;
 import levy.daniel.application.model.persistence.metier.utilisateur.entities.jpa.MonCerbereEntityJPA;
 
 /**
@@ -51,7 +50,7 @@ public interface IMonCerbereService {
 	 * @return levy.daniel.application.model.services.metier
 	 * .utilisateurs.IReponseCerbereService
 	 * 
-	 * @throws MauvaisParametreRunTimeException si pCerbere est null.
+	 * @throws Exception si pCerbere est null.
 	 */
 	IReponseCerbereService loggerCerbere(Cerbere pCerbere) throws Exception;
 

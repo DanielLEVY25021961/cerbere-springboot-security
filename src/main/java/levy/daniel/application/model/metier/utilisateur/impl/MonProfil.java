@@ -265,13 +265,11 @@ public class MonProfil implements IMonProfil {
 				return this.getPortee()
 						.compareToIgnoreCase(pObject.getPortee());
 				
-			} else {
-				
-				return this.getPortee()
-						.compareToIgnoreCase(pObject.getPortee());
-				
 			}
-			
+				
+			return this.getPortee()
+					.compareToIgnoreCase(pObject.getPortee());
+							
 		}
 		
 		return 0;

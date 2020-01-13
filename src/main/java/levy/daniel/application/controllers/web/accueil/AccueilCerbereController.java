@@ -123,8 +123,10 @@ public class AccueilCerbereController {
 	 * <li>passe les attributs au Model.</li>
 	 * <li>passe les attributs à la session.</li>
 	 * <li>aiguille vers la bonne vue en fonction du nombre de profils.</li>
-	 * </ul>
+	 * </ul> 
 	 * 
+	 * @param pSession : 
+	 * <code>javax.servlet.http.HttpSession</code>
 	 * @param pHttpServletRequest : 
 	 * <code>javax.servlet.http.HttpServletRequest</code>.
 	 *
@@ -150,7 +152,7 @@ public class AccueilCerbereController {
 			/* délègue au SERVICE la tâche de réaliser 
 			 * les préparatifs de sécurité sur l'objet CERBERE. */
 			final IReponseCerbereService reponse 
-				= monCerbereService.loggerCerbere(cerbere);
+				= this.monCerbereService.loggerCerbere(cerbere);
 			
 			/* récupère l'Entity dans la réponse du SERVICE. */
 			final MonCerbereEntityJPA monCerbereEntityJPA 
@@ -314,8 +316,6 @@ public class AccueilCerbereController {
 	 * @param pRequest  : javax.servlet.http.HttpServletRequest
 	 * @param pResponse : javax.servlet.http.HttpServletResponse
 	 * @param pSession : javax.servlet.http.HttpSession
-	 *
-	 * @return : String : "/accueil/login".<br/>
 	 * 
 	 * @throws CerbereConnexionException 
 	 */
