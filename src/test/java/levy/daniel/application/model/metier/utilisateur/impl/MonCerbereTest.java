@@ -1534,7 +1534,7 @@ public class MonCerbereTest {
 	
 	
 	/**
-	 * method avantTests() :<br/>
+	 * method avantTests() :
 	 * <ul>
 	 * <li>instructions exécutées <b>avant l'ensemble des tests</b> 
 	 * de la classe JUnit.</li>

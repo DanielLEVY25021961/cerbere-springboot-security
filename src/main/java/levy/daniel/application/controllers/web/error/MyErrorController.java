@@ -89,14 +89,18 @@ public class MyErrorController implements ErrorController {
 	 * @return : String : Page HTML pour afficher l'erreur.<br/>
 	 */
 	@RequestMapping(PATH_ERROR)
-	public final String handleError(final HttpServletRequest pRequest, final DefaultErrorAttributes pErrorAttributes,
-			final Model pModel, final WebRequest pWebRequest) {
+	public final String handleError(
+			final HttpServletRequest pRequest
+				, final DefaultErrorAttributes pErrorAttributes
+					, final Model pModel
+						, final WebRequest pWebRequest) {
 
 		/*
 		 * utilise un org.springframework.boot.web.servlet.error.DefaultErrorAttributes
 		 * pour récupérer la Map des erreurs.
 		 */
-		final Map<String, Object> errorAttributesMap = pErrorAttributes.getErrorAttributes(pWebRequest, true);
+		final Map<String, Object> errorAttributesMap 
+			= pErrorAttributes.getErrorAttributes(pWebRequest, true);
 
 		/*
 		 * récupère l'exception auprès du
@@ -143,6 +147,8 @@ public class MyErrorController implements ErrorController {
 
 	} // Fin de handleError(...).__________________________________________
 
+	
+	
 	/**
 	 * {@inheritDoc}
 	 */
@@ -151,4 +157,6 @@ public class MyErrorController implements ErrorController {
 		return PATH_ERROR;
 	} // Fin de getErrorPath().____________________________________________
 
+	
+	
 } // FIN DE LA CLASSE MyErrorController.-------------------------------------
