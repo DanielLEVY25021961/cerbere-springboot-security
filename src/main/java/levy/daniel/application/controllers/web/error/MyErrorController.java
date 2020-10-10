@@ -63,6 +63,8 @@ public class MyErrorController implements ErrorController {
 		super();
 	} // Fin de CONSTRUCTEUR D'ARITE NULLE.________________________________
 
+	
+	
 	/**
 	 * aiguille l'action "/error" provenant du conteneur de Servlet vers la bonne
 	 * page d'erreur (erreur-404.html, erreur-500.html, ...).
